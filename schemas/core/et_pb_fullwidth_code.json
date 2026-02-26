@@ -1,0 +1,53 @@
+{
+    "module_type": "et_pb_fullwidth_code",
+    "label": "Fullwidth Code",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A fullwidth code module for embedding custom HTML, CSS, or JavaScript in a fullwidth section.",
+    "natural_language_aliases": ["fullwidth code", "full width code", "fullwidth embed", "fullwidth HTML"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "content": {
+                            "type": "codemirror",
+                            "label": "Content",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {}
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "module_type": "et_pb_social_media_follow_network",
+    "label": "Social Network",
+    "category": "action",
+    "has_children": false,
+    "child_type": null,
+    "description": "A single social network icon within a Social Media Follow parent module.",
+    "natural_language_aliases": ["social network", "social icon", "follow network item"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "social_network": {
+                            "type": "select",
+                            "label": "Social Network",
+                            "default": "facebook",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "facebook": "Facebook",
+                                "twitter": "Twitter",
+                                "instagram": "Instagram",
+                                "linkedin": "LinkedIn",
+                                "youtube": "YouTube",
+                                "pinterest": "Pinterest",
+                                "tumblr": "Tumblr",
+                                "dribbble": "Dribbble"
+                            }
+                        },
+                        "url": {
+                            "type": "text",
+                            "label": "Account URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "icon": {
+                    "label": "Icon",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Icon Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

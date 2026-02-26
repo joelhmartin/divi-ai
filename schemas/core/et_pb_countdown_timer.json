@@ -1,0 +1,90 @@
+{
+    "module_type": "et_pb_countdown_timer",
+    "label": "Countdown Timer",
+    "category": "action",
+    "has_children": false,
+    "child_type": null,
+    "description": "An animated countdown timer displaying days, hours, minutes, and seconds until a target date.",
+    "natural_language_aliases": ["countdown", "timer", "countdown timer", "countdown clock"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "date_time": {
+                            "type": "text",
+                            "label": "Countdown To",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "center",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                },
+                "background": {
+                    "label": "Background",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "module_type": "et_pb_sidebar",
+    "label": "Sidebar",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "Displays a registered WordPress widget area/sidebar within a Divi layout.",
+    "natural_language_aliases": ["sidebar", "widget area", "widgets"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "area": {
+                            "type": "text",
+                            "label": "Widget Area",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_border": {
+                            "type": "yes_no",
+                            "label": "Show Border",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

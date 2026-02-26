@@ -1,0 +1,108 @@
+{
+    "module_type": "et_pb_filterable_portfolio",
+    "label": "Filterable Portfolio",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A portfolio grid with category filter tabs, supporting grid and fullwidth layouts.",
+    "natural_language_aliases": ["filterable portfolio", "portfolio filter", "filtered projects", "portfolio with tabs"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "fullwidth": {
+                            "type": "yes_no",
+                            "label": "Fullwidth Layout",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "posts_number": {
+                            "type": "text",
+                            "label": "Projects Number",
+                            "default": "10",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "include_categories": {
+                            "type": "text",
+                            "label": "Include Categories",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_title": {
+                            "type": "yes_no",
+                            "label": "Show Title",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_categories": {
+                            "type": "yes_no",
+                            "label": "Show Categories",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_pagination": {
+                            "type": "yes_no",
+                            "label": "Show Pagination",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "overlay": {
+                    "label": "Overlay",
+                    "fields": {
+                        "hover_overlay_color": {
+                            "type": "color",
+                            "label": "Overlay Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "zoom_icon_color": {
+                            "type": "color",
+                            "label": "Zoom Icon Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

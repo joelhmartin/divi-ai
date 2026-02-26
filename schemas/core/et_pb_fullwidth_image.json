@@ -1,0 +1,79 @@
+{
+    "module_type": "et_pb_fullwidth_image",
+    "label": "Fullwidth Image",
+    "category": "media",
+    "has_children": false,
+    "child_type": null,
+    "description": "A full-width image module designed for fullwidth sections, spanning the entire browser width.",
+    "natural_language_aliases": ["fullwidth image", "full width image", "wide image", "banner image"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Image",
+                    "fields": {
+                        "src": {
+                            "type": "upload",
+                            "label": "Image URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "alt": {
+                            "type": "text",
+                            "label": "Alt Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "link": {
+                    "label": "Link",
+                    "fields": {
+                        "url": {
+                            "type": "text",
+                            "label": "Link URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url_new_window": {
+                            "type": "yes_no",
+                            "label": "URL Opens in New Window",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {}
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

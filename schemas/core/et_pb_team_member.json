@@ -1,0 +1,132 @@
+{
+    "module_type": "et_pb_team_member",
+    "label": "Person",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A team member profile card with photo, name, position, bio, and social media links.",
+    "natural_language_aliases": ["person", "team member", "staff", "employee", "bio card"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "name": {
+                            "type": "text",
+                            "label": "Name",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "position": {
+                            "type": "text",
+                            "label": "Position",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "image_url": {
+                            "type": "upload",
+                            "label": "Image",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "content": {
+                            "type": "tiny_mce",
+                            "label": "Description",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "facebook_url": {
+                            "type": "text",
+                            "label": "Facebook URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "twitter_url": {
+                            "type": "text",
+                            "label": "Twitter URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "linkedin_url": {
+                            "type": "text",
+                            "label": "LinkedIn URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "icon": {
+                    "label": "Social Icon",
+                    "fields": {
+                        "icon_color": {
+                            "type": "color",
+                            "label": "Icon Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        },
+                        "icon_hover_color": {
+                            "type": "color",
+                            "label": "Icon Hover Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

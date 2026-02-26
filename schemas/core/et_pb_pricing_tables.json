@@ -1,0 +1,78 @@
+{
+    "module_type": "et_pb_pricing_tables",
+    "label": "Pricing Tables",
+    "category": "action",
+    "has_children": true,
+    "child_type": "et_pb_pricing_table",
+    "description": "A container for side-by-side pricing table comparisons with featured table highlighting.",
+    "natural_language_aliases": ["pricing tables", "pricing", "price comparison", "plans"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "elements": {
+                    "label": "Elements",
+                    "fields": {
+                        "show_bullet": {
+                            "type": "yes_no",
+                            "label": "Show Bullet",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "layout": {
+                    "label": "Layout",
+                    "fields": {
+                        "featured_table_background_color": {
+                            "type": "color",
+                            "label": "Featured Table Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                },
+                "bullet": {
+                    "label": "Bullet",
+                    "fields": {
+                        "bullet_color": {
+                            "type": "color",
+                            "label": "Bullet Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

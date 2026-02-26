@@ -1,0 +1,80 @@
+{
+    "module_type": "et_pb_comments",
+    "label": "Comments",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "Displays the WordPress comments section for the current post or page.",
+    "natural_language_aliases": ["comments", "comment section", "discussion", "replies"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "elements": {
+                    "label": "Elements",
+                    "fields": {
+                        "show_avatar": {
+                            "type": "yes_no",
+                            "label": "Show Avatar",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_reply": {
+                            "type": "yes_no",
+                            "label": "Show Reply Button",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_count": {
+                            "type": "yes_no",
+                            "label": "Show Comment Count",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "form_field": {
+                    "label": "Form Fields",
+                    "fields": {
+                        "form_background_color": {
+                            "type": "color",
+                            "label": "Form Field Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

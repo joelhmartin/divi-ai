@@ -1,0 +1,87 @@
+{
+    "module_type": "et_pb_post_nav",
+    "label": "Post Navigation",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "Displays previous/next post navigation links for single posts.",
+    "natural_language_aliases": ["post navigation", "post nav", "next previous posts", "post links"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "show_prev": {
+                            "type": "yes_no",
+                            "label": "Show Previous Link",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_next": {
+                            "type": "yes_no",
+                            "label": "Show Next Link",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "in_same_term": {
+                            "type": "yes_no",
+                            "label": "Stay in Same Category",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "navigation": {
+                    "label": "Navigation",
+                    "fields": {
+                        "prev_text_color": {
+                            "type": "color",
+                            "label": "Previous Link Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        },
+                        "next_text_color": {
+                            "type": "color",
+                            "label": "Next Link Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

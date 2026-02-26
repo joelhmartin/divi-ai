@@ -1,0 +1,94 @@
+{
+    "module_type": "et_pb_audio",
+    "label": "Audio",
+    "category": "media",
+    "has_children": false,
+    "child_type": null,
+    "description": "An audio player module for embedding music or podcast files with album art and metadata.",
+    "natural_language_aliases": ["audio", "music", "sound", "audio player", "podcast"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "audio": {
+                            "type": "text",
+                            "label": "Audio URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "artist_name": {
+                            "type": "text",
+                            "label": "Artist Name",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "album_name": {
+                            "type": "text",
+                            "label": "Album Name",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "image_url": {
+                            "type": "upload",
+                            "label": "Cover Art",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "player": {
+                    "label": "Player",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -22,13 +22,14 @@ class Test_Schema_Registry extends TestCase {
         $this->assertNotEmpty( $types, 'Should load at least one schema' );
     }
 
-    public function test_has_ten_core_modules() {
+    public function test_has_fifty_core_modules() {
         $types = $this->registry->get_types();
-        $this->assertCount( 10, $types, 'Should have 10 core module schemas' );
+        $this->assertCount( 50, $types, 'Should have 50 core module schemas' );
     }
 
     public function test_expected_module_types_exist() {
         $expected = array(
+            // Original 10.
             'et_pb_text',
             'et_pb_blurb',
             'et_pb_button',
@@ -39,6 +40,56 @@ class Test_Schema_Registry extends TestCase {
             'et_pb_code',
             'et_pb_contact_form',
             'et_pb_signup',
+            // Phase 4: Media.
+            'et_pb_video',
+            'et_pb_video_slider',
+            'et_pb_audio',
+            'et_pb_gallery',
+            'et_pb_fullwidth_image',
+            // Phase 4: Content.
+            'et_pb_heading',
+            'et_pb_divider',
+            'et_pb_cta',
+            'et_pb_toggle',
+            'et_pb_testimonial',
+            // Phase 4: Counters.
+            'et_pb_number_counter',
+            'et_pb_circle_counter',
+            'et_pb_bar_counters',
+            'et_pb_bar_counters_item',
+            // Phase 4: Social/Timer.
+            'et_pb_countdown_timer',
+            'et_pb_social_media_follow',
+            'et_pb_social_media_follow_network',
+            // Phase 4: Maps.
+            'et_pb_map',
+            'et_pb_map_pin',
+            // Phase 4: Dynamic.
+            'et_pb_sidebar',
+            'et_pb_blog',
+            'et_pb_shop',
+            'et_pb_filterable_portfolio',
+            'et_pb_portfolio',
+            // Phase 4: Pricing/Team.
+            'et_pb_pricing_tables',
+            'et_pb_pricing_table',
+            'et_pb_team_member',
+            // Phase 4: Post.
+            'et_pb_comments',
+            'et_pb_post_title',
+            'et_pb_post_nav',
+            'et_pb_post_slider',
+            // Phase 4: Forms/Auth.
+            'et_pb_search',
+            'et_pb_login',
+            'et_pb_menu',
+            // Phase 4: Fullwidth.
+            'et_pb_fullwidth_header',
+            'et_pb_fullwidth_code',
+            'et_pb_fullwidth_slider',
+            'et_pb_fullwidth_menu',
+            'et_pb_fullwidth_post_slider',
+            'et_pb_fullwidth_portfolio',
         );
 
         foreach ( $expected as $type ) {

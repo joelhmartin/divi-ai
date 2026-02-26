@@ -1,0 +1,107 @@
+{
+    "module_type": "et_pb_shop",
+    "label": "Shop",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A WooCommerce product grid displaying products with filtering by type and category.",
+    "natural_language_aliases": ["shop", "products", "store", "WooCommerce", "product grid"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "type": {
+                            "type": "select",
+                            "label": "Product Type",
+                            "default": "recent",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "recent": "Recent Products",
+                                "featured": "Featured Products",
+                                "sale": "Sale Products",
+                                "best_selling": "Best Selling Products",
+                                "top_rated": "Top Rated Products"
+                            }
+                        },
+                        "posts_number": {
+                            "type": "text",
+                            "label": "Products Number",
+                            "default": "12",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "columns_number": {
+                            "type": "select",
+                            "label": "Columns Number",
+                            "default": "4",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6"
+                            }
+                        },
+                        "orderby": {
+                            "type": "select",
+                            "label": "Order By",
+                            "default": "date",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "date": "Date",
+                                "price": "Price",
+                                "popularity": "Popularity",
+                                "rating": "Rating"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "overlay": {
+                    "label": "Overlay",
+                    "fields": {
+                        "hover_overlay_color": {
+                            "type": "color",
+                            "label": "Overlay Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

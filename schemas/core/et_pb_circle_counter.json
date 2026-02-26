@@ -1,0 +1,80 @@
+{
+    "module_type": "et_pb_circle_counter",
+    "label": "Circle Counter",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "An animated circular progress bar that fills to a percentage with a title label.",
+    "natural_language_aliases": ["circle counter", "progress circle", "donut chart", "radial counter"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "number": {
+                            "type": "text",
+                            "label": "Percent",
+                            "default": "0",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "circle": {
+                    "label": "Circle",
+                    "fields": {
+                        "bar_bg_color": {
+                            "type": "color",
+                            "label": "Filled Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "circle_color": {
+                            "type": "color",
+                            "label": "Circle Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

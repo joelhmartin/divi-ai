@@ -1,0 +1,97 @@
+{
+    "module_type": "et_pb_number_counter",
+    "label": "Number Counter",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "An animated counter that counts up to a target number, often used for statistics and milestones.",
+    "natural_language_aliases": ["number counter", "counter", "stat counter", "number", "statistic"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "number": {
+                            "type": "text",
+                            "label": "Number",
+                            "default": "0",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "percent_sign": {
+                            "type": "yes_no",
+                            "label": "Percent Sign",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "center",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                },
+                "number_text": {
+                    "label": "Number Text",
+                    "fields": {
+                        "number_text_color": {
+                            "type": "color",
+                            "label": "Number Text Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "module_type": "et_pb_fullwidth_menu",
+    "label": "Fullwidth Menu",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A fullwidth navigation menu module for displaying a WordPress menu in a fullwidth section.",
+    "natural_language_aliases": ["fullwidth menu", "full width menu", "wide menu", "fullwidth navigation"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "menu_id": {
+                            "type": "text",
+                            "label": "Menu",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "submenu_direction": {
+                            "type": "select",
+                            "label": "Dropdown Direction",
+                            "default": "downwards",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "downwards": "Downwards",
+                                "upwards": "Upwards"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "layout": {
+                    "label": "Layout",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                },
+                "dropdown": {
+                    "label": "Dropdown Menu",
+                    "fields": {
+                        "dropdown_menu_bg_color": {
+                            "type": "color",
+                            "label": "Dropdown Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

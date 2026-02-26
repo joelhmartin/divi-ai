@@ -1,0 +1,87 @@
+{
+    "module_type": "et_pb_map",
+    "label": "Map",
+    "category": "media",
+    "has_children": true,
+    "child_type": "et_pb_map_pin",
+    "description": "A Google Maps module for displaying a location with optional map pins and custom styling.",
+    "natural_language_aliases": ["map", "google map", "maps", "location map"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Map",
+                    "fields": {
+                        "address": {
+                            "type": "text",
+                            "label": "Map Address",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "zoom_level": {
+                            "type": "text",
+                            "label": "Zoom Level",
+                            "default": "18",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "mouse_wheel": {
+                            "type": "yes_no",
+                            "label": "Mouse Wheel Zoom",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "mobile_dragging": {
+                            "type": "yes_no",
+                            "label": "Mobile Dragging",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "map": {
+                    "label": "Map",
+                    "fields": {
+                        "grayscale": {
+                            "type": "yes_no",
+                            "label": "Grayscale Filter",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

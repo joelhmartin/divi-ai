@@ -1,0 +1,105 @@
+{
+    "module_type": "et_pb_heading",
+    "label": "Heading",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A simple heading module for displaying prominent section titles with configurable heading level.",
+    "natural_language_aliases": ["heading", "title", "headline", "header text", "h1", "h2"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Text",
+                    "fields": {
+                        "title": {
+                            "type": "text",
+                            "label": "Heading Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "link": {
+                    "label": "Link",
+                    "fields": {
+                        "url": {
+                            "type": "text",
+                            "label": "Heading Link URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url_new_window": {
+                            "type": "yes_no",
+                            "label": "URL Opens in New Window",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "header": {
+                    "label": "Heading Text",
+                    "fields": {
+                        "header_level": {
+                            "type": "select",
+                            "label": "Heading Level",
+                            "default": "h2",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "h1": "H1",
+                                "h2": "H2",
+                                "h3": "H3",
+                                "h4": "H4",
+                                "h5": "H5",
+                                "h6": "H6"
+                            }
+                        },
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

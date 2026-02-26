@@ -1,0 +1,127 @@
+{
+    "module_type": "et_pb_menu",
+    "label": "Menu",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A navigation menu module displaying a WordPress menu with optional logo and search icon.",
+    "natural_language_aliases": ["menu", "navigation", "nav menu", "navigation menu"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "menu_id": {
+                            "type": "text",
+                            "label": "Menu",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "submenu_direction": {
+                            "type": "select",
+                            "label": "Dropdown Direction",
+                            "default": "downwards",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "downwards": "Downwards",
+                                "upwards": "Upwards"
+                            }
+                        }
+                    }
+                },
+                "elements": {
+                    "label": "Elements",
+                    "fields": {
+                        "logo": {
+                            "type": "upload",
+                            "label": "Logo",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_search_icon": {
+                            "type": "yes_no",
+                            "label": "Show Search Icon",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_cart_icon": {
+                            "type": "yes_no",
+                            "label": "Show Cart Icon",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "layout": {
+                    "label": "Layout",
+                    "fields": {
+                        "menu_style": {
+                            "type": "select",
+                            "label": "Menu Style",
+                            "default": "left_aligned",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "left_aligned": "Left Aligned",
+                                "centered": "Centered",
+                                "inline_centered_logo": "Inline Centered Logo"
+                            }
+                        }
+                    }
+                },
+                "dropdown": {
+                    "label": "Dropdown Menu",
+                    "fields": {
+                        "dropdown_menu_bg_color": {
+                            "type": "color",
+                            "label": "Dropdown Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "dropdown_menu_text_color": {
+                            "type": "color",
+                            "label": "Dropdown Text Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

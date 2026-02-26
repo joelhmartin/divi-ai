@@ -1,0 +1,131 @@
+{
+    "module_type": "et_pb_gallery",
+    "label": "Gallery",
+    "category": "media",
+    "has_children": false,
+    "child_type": null,
+    "description": "A responsive image gallery with grid and slider layouts, lightbox support, and configurable columns.",
+    "natural_language_aliases": ["gallery", "image gallery", "photo gallery", "photos"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Images",
+                    "fields": {
+                        "gallery_ids": {
+                            "type": "text",
+                            "label": "Gallery Images",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "gallery_orderby": {
+                            "type": "select",
+                            "label": "Gallery Order",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "": "Default",
+                                "rand": "Random"
+                            }
+                        },
+                        "fullwidth": {
+                            "type": "yes_no",
+                            "label": "Fullwidth Layout",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "posts_number": {
+                            "type": "text",
+                            "label": "Images Number",
+                            "default": "4",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_title_and_caption": {
+                            "type": "yes_no",
+                            "label": "Show Title and Caption",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_pagination": {
+                            "type": "yes_no",
+                            "label": "Show Pagination",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "layout": {
+                    "label": "Layout",
+                    "fields": {
+                        "gallery_columns": {
+                            "type": "select",
+                            "label": "Gallery Columns",
+                            "default": "3",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "2": "2",
+                                "3": "3",
+                                "4": "4",
+                                "5": "5",
+                                "6": "6"
+                            }
+                        }
+                    }
+                },
+                "overlay": {
+                    "label": "Overlay",
+                    "fields": {
+                        "zoom_icon_color": {
+                            "type": "color",
+                            "label": "Zoom Icon Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "hover_overlay_color": {
+                            "type": "color",
+                            "label": "Hover Overlay Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

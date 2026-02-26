@@ -1,0 +1,122 @@
+{
+    "module_type": "et_pb_pricing_table",
+    "label": "Pricing Table",
+    "category": "action",
+    "has_children": false,
+    "child_type": null,
+    "description": "A single pricing plan card with title, subtitle, price, features list, and CTA button.",
+    "natural_language_aliases": ["pricing table", "pricing plan", "price card", "plan"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "featured": {
+                            "type": "yes_no",
+                            "label": "Featured",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "subtitle": {
+                            "type": "text",
+                            "label": "Subtitle",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "currency": {
+                            "type": "text",
+                            "label": "Currency",
+                            "default": "$",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "per": {
+                            "type": "text",
+                            "label": "Per",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "sum": {
+                            "type": "text",
+                            "label": "Price",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_text": {
+                            "type": "text",
+                            "label": "Button Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_url": {
+                            "type": "text",
+                            "label": "Button URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "content": {
+                            "type": "tiny_mce",
+                            "label": "Features",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "pricing": {
+                    "label": "Pricing",
+                    "fields": {
+                        "pricing_item_background_color": {
+                            "type": "color",
+                            "label": "Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

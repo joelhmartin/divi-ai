@@ -1,0 +1,136 @@
+{
+    "module_type": "et_pb_post_title",
+    "label": "Post Title",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "Displays the current post/page title, meta info, and featured image in a configurable layout.",
+    "natural_language_aliases": ["post title", "page title", "title module", "post header"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "title": {
+                            "type": "yes_no",
+                            "label": "Show Title",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "meta": {
+                            "type": "yes_no",
+                            "label": "Show Meta",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "author": {
+                            "type": "yes_no",
+                            "label": "Show Author",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "date": {
+                            "type": "yes_no",
+                            "label": "Show Date",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "categories": {
+                            "type": "yes_no",
+                            "label": "Show Categories",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "comments": {
+                            "type": "yes_no",
+                            "label": "Show Comments Count",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "featured_image": {
+                            "type": "yes_no",
+                            "label": "Show Featured Image",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "featured_placement": {
+                            "type": "select",
+                            "label": "Featured Image Placement",
+                            "default": "below",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "below": "Below Title",
+                                "above": "Above Title",
+                                "background": "As Background"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        },
+                        "text_color": {
+                            "type": "select",
+                            "label": "Text Color Scheme",
+                            "default": "dark",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "dark": "Dark",
+                                "light": "Light"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

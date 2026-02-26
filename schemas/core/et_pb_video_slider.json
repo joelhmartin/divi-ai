@@ -1,0 +1,73 @@
+{
+    "module_type": "et_pb_video_slider",
+    "label": "Video Slider",
+    "category": "media",
+    "has_children": true,
+    "child_type": "et_pb_video_slider_item",
+    "description": "A slider of video thumbnails that plays videos in a featured area when clicked.",
+    "natural_language_aliases": ["video slider", "video carousel", "video gallery"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "elements": {
+                    "label": "Elements",
+                    "fields": {
+                        "show_image_overlay": {
+                            "type": "yes_no",
+                            "label": "Show Image Overlay",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_thumbnails": {
+                            "type": "yes_no",
+                            "label": "Show Thumbnails",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "navigation": {
+                    "label": "Navigation",
+                    "fields": {
+                        "arrows_custom_color": {
+                            "type": "color",
+                            "label": "Arrow Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

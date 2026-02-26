@@ -1,0 +1,145 @@
+{
+    "module_type": "et_pb_blog",
+    "label": "Blog",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A dynamic blog feed module displaying posts with configurable layout, categories, and pagination.",
+    "natural_language_aliases": ["blog", "posts", "blog feed", "post list", "articles"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "fullwidth": {
+                            "type": "yes_no",
+                            "label": "Fullwidth Layout",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "posts_number": {
+                            "type": "text",
+                            "label": "Posts Number",
+                            "default": "10",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "include_categories": {
+                            "type": "text",
+                            "label": "Include Categories",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_thumbnail": {
+                            "type": "yes_no",
+                            "label": "Show Featured Image",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_content": {
+                            "type": "select",
+                            "label": "Content",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "off": "Show Excerpt",
+                                "on": "Show Full Content"
+                            }
+                        },
+                        "show_author": {
+                            "type": "yes_no",
+                            "label": "Show Author",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_date": {
+                            "type": "yes_no",
+                            "label": "Show Date",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_categories": {
+                            "type": "yes_no",
+                            "label": "Show Categories",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_pagination": {
+                            "type": "yes_no",
+                            "label": "Show Pagination",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "layout": {
+                    "label": "Layout",
+                    "fields": {
+                        "masonry_tile_background_color": {
+                            "type": "color",
+                            "label": "Grid Tile Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                },
+                "overlay": {
+                    "label": "Overlay",
+                    "fields": {
+                        "use_overlay": {
+                            "type": "yes_no",
+                            "label": "Featured Image Overlay",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "hover_overlay_color": {
+                            "type": "color",
+                            "label": "Overlay Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

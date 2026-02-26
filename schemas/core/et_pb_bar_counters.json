@@ -1,0 +1,53 @@
+{
+    "module_type": "et_pb_bar_counters",
+    "label": "Bar Counters",
+    "category": "text",
+    "has_children": true,
+    "child_type": "et_pb_bar_counters_item",
+    "description": "A set of horizontal progress bars showing percentages, useful for skill levels and statistics.",
+    "natural_language_aliases": ["bar counters", "progress bars", "skill bars", "horizontal bars"],
+    "tabs": {
+        "general": {
+            "toggles": {}
+        },
+        "design": {
+            "toggles": {
+                "bar": {
+                    "label": "Bar",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Bar Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

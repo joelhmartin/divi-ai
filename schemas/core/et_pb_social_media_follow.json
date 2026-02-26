@@ -1,0 +1,70 @@
+{
+    "module_type": "et_pb_social_media_follow",
+    "label": "Social Media Follow",
+    "category": "action",
+    "has_children": true,
+    "child_type": "et_pb_social_media_follow_network",
+    "description": "A row of social media follow icons linking to various social network profiles.",
+    "natural_language_aliases": ["social media", "social follow", "social icons", "social links"],
+    "tabs": {
+        "general": {
+            "toggles": {}
+        },
+        "design": {
+            "toggles": {
+                "icon": {
+                    "label": "Icon",
+                    "fields": {
+                        "follow_button": {
+                            "type": "yes_no",
+                            "label": "Follow Button",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "alignment": {
+                    "label": "Alignment",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Module Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

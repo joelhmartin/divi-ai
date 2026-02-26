@@ -1,0 +1,73 @@
+{
+    "module_type": "et_pb_bar_counters_item",
+    "label": "Bar Counter Item",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A single progress bar within a Bar Counters parent, with a label and percentage value.",
+    "natural_language_aliases": ["bar counter item", "progress bar item", "bar item"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "content": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "percent": {
+                            "type": "text",
+                            "label": "Percent",
+                            "default": "0",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "bar": {
+                    "label": "Bar",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Bar Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

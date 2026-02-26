@@ -1,0 +1,101 @@
+{
+    "module_type": "et_pb_fullwidth_portfolio",
+    "label": "Fullwidth Portfolio",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A fullwidth portfolio carousel displaying Divi projects in a horizontally scrolling layout.",
+    "natural_language_aliases": ["fullwidth portfolio", "full width portfolio", "wide portfolio"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "include_categories": {
+                            "type": "text",
+                            "label": "Include Categories",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "posts_number": {
+                            "type": "text",
+                            "label": "Projects Number",
+                            "default": "10",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_title": {
+                            "type": "yes_no",
+                            "label": "Show Title",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_date": {
+                            "type": "yes_no",
+                            "label": "Show Date",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "auto": {
+                            "type": "yes_no",
+                            "label": "Automatic Carousel",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "overlay": {
+                    "label": "Overlay",
+                    "fields": {
+                        "hover_overlay_color": {
+                            "type": "color",
+                            "label": "Overlay Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "zoom_icon_color": {
+                            "type": "color",
+                            "label": "Zoom Icon Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "module_type": "et_pb_testimonial",
+    "label": "Testimonial",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A testimonial module displaying a quote with author name, job title, company, and portrait.",
+    "natural_language_aliases": ["testimonial", "quote", "review", "customer review", "endorsement"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "author": {
+                            "type": "text",
+                            "label": "Author",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "job_title": {
+                            "type": "text",
+                            "label": "Job Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "company_name": {
+                            "type": "text",
+                            "label": "Company Name",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url": {
+                            "type": "text",
+                            "label": "Company URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url_new_window": {
+                            "type": "yes_no",
+                            "label": "URL Opens in New Window",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "portrait_url": {
+                            "type": "upload",
+                            "label": "Portrait Image",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "content": {
+                            "type": "tiny_mce",
+                            "label": "Body",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "portrait": {
+                    "label": "Portrait",
+                    "fields": {
+                        "portrait_width": {
+                            "type": "text",
+                            "label": "Portrait Width",
+                            "default": "90px",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "portrait_height": {
+                            "type": "text",
+                            "label": "Portrait Height",
+                            "default": "90px",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "background": {
+                    "label": "Background",
+                    "fields": {
+                        "background_color": {
+                            "type": "color",
+                            "label": "Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

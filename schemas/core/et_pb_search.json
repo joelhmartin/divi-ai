@@ -1,0 +1,99 @@
+{
+    "module_type": "et_pb_search",
+    "label": "Search",
+    "category": "forms",
+    "has_children": false,
+    "child_type": null,
+    "description": "A WordPress search form module with configurable placeholder text and button visibility.",
+    "natural_language_aliases": ["search", "search form", "search bar", "search box"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "placeholder": {
+                            "type": "text",
+                            "label": "Placeholder Text",
+                            "default": "Search",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_button": {
+                            "type": "yes_no",
+                            "label": "Show Button",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "exclude_pages": {
+                            "type": "yes_no",
+                            "label": "Exclude Pages",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "exclude_posts": {
+                            "type": "yes_no",
+                            "label": "Exclude Posts",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "field": {
+                    "label": "Field",
+                    "fields": {
+                        "input_line_height": {
+                            "type": "text",
+                            "label": "Input Line Height",
+                            "default": "",
+                            "responsive": true,
+                            "hover": false
+                        }
+                    }
+                },
+                "button": {
+                    "label": "Button",
+                    "fields": {
+                        "button_color": {
+                            "type": "color",
+                            "label": "Button Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

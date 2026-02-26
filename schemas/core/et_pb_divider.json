@@ -1,0 +1,112 @@
+{
+    "module_type": "et_pb_divider",
+    "label": "Divider",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A visual divider or spacer for separating content sections with optional line styling.",
+    "natural_language_aliases": ["divider", "separator", "line", "spacer", "horizontal rule"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Visibility",
+                    "fields": {
+                        "show_divider": {
+                            "type": "yes_no",
+                            "label": "Show Divider",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "line": {
+                    "label": "Line",
+                    "fields": {
+                        "color": {
+                            "type": "color",
+                            "label": "Line Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        },
+                        "divider_style": {
+                            "type": "select",
+                            "label": "Line Style",
+                            "default": "solid",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "solid": "Solid",
+                                "dotted": "Dotted",
+                                "dashed": "Dashed",
+                                "double": "Double",
+                                "groove": "Groove",
+                                "ridge": "Ridge"
+                            }
+                        },
+                        "divider_weight": {
+                            "type": "text",
+                            "label": "Line Weight",
+                            "default": "1px",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "divider_position": {
+                            "type": "select",
+                            "label": "Line Position",
+                            "default": "top",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "top": "Top",
+                                "center": "Center",
+                                "bottom": "Bottom"
+                            }
+                        }
+                    }
+                },
+                "sizing": {
+                    "label": "Sizing",
+                    "fields": {
+                        "height": {
+                            "type": "text",
+                            "label": "Height",
+                            "default": "23px",
+                            "responsive": true,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

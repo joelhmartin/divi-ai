@@ -1,0 +1,127 @@
+{
+    "module_type": "et_pb_fullwidth_post_slider",
+    "label": "Fullwidth Post Slider",
+    "category": "media",
+    "has_children": false,
+    "child_type": null,
+    "description": "A fullwidth slider that generates slides from blog posts, spanning the full browser width.",
+    "natural_language_aliases": ["fullwidth post slider", "full width post slider", "wide post slider"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "posts_number": {
+                            "type": "text",
+                            "label": "Posts Number",
+                            "default": "5",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "include_categories": {
+                            "type": "text",
+                            "label": "Include Categories",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_arrows": {
+                            "type": "yes_no",
+                            "label": "Show Arrows",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_pagination": {
+                            "type": "yes_no",
+                            "label": "Show Pagination",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_more_button": {
+                            "type": "yes_no",
+                            "label": "Show Read More Button",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_meta": {
+                            "type": "yes_no",
+                            "label": "Show Meta",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "auto_play": {
+                    "label": "Automatic Animation",
+                    "fields": {
+                        "auto": {
+                            "type": "yes_no",
+                            "label": "Automatic Animation",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "auto_speed": {
+                            "type": "text",
+                            "label": "Automatic Animation Speed (in ms)",
+                            "default": "7000",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "navigation": {
+                    "label": "Navigation",
+                    "fields": {
+                        "arrows_custom_color": {
+                            "type": "color",
+                            "label": "Arrow Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "dot_nav_custom_color": {
+                            "type": "color",
+                            "label": "Dot Navigation Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

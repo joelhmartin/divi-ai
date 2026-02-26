@@ -1,0 +1,166 @@
+{
+    "module_type": "et_pb_fullwidth_header",
+    "label": "Fullwidth Header",
+    "category": "layout",
+    "has_children": false,
+    "child_type": null,
+    "description": "A fullwidth hero header with title, subhead, content, two CTA buttons, and background image/video.",
+    "natural_language_aliases": ["fullwidth header", "hero section", "hero banner", "full width header"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Text",
+                    "fields": {
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "subhead": {
+                            "type": "text",
+                            "label": "Subheading",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "content": {
+                            "type": "tiny_mce",
+                            "label": "Body",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_one_text": {
+                            "type": "text",
+                            "label": "Button One Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_one_url": {
+                            "type": "text",
+                            "label": "Button One URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_two_text": {
+                            "type": "text",
+                            "label": "Button Two Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_two_url": {
+                            "type": "text",
+                            "label": "Button Two URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "images": {
+                    "label": "Images",
+                    "fields": {
+                        "header_image_url": {
+                            "type": "upload",
+                            "label": "Header Image",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "image_orientation": {
+                            "type": "select",
+                            "label": "Image Orientation",
+                            "default": "center",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "center": "Center",
+                                "bottom": "Bottom"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "layout": {
+                    "label": "Layout",
+                    "fields": {
+                        "header_fullscreen": {
+                            "type": "yes_no",
+                            "label": "Make Fullscreen",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text & Logo Orientation",
+                            "default": "center",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        },
+                        "content_orientation": {
+                            "type": "select",
+                            "label": "Content Vertical Alignment",
+                            "default": "center",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "center": "Center",
+                                "bottom": "Bottom"
+                            }
+                        }
+                    }
+                },
+                "scroll": {
+                    "label": "Scroll Down",
+                    "fields": {
+                        "header_scroll_down": {
+                            "type": "yes_no",
+                            "label": "Show Scroll Down Button",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
