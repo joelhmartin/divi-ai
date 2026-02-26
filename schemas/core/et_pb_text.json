@@ -1,0 +1,92 @@
+{
+    "module_type": "et_pb_text",
+    "label": "Text",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A text block with full rich-text editing support.",
+    "natural_language_aliases": ["text", "paragraph", "content block", "text block"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Text",
+                    "fields": {
+                        "content": {
+                            "type": "tiny_mce",
+                            "label": "Body",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right",
+                                "justified": "Justified"
+                            }
+                        }
+                    }
+                },
+                "header": {
+                    "label": "Title Text",
+                    "fields": {
+                        "header_level": {
+                            "type": "select",
+                            "label": "Title Heading Level",
+                            "default": "h2",
+                            "responsive": false,
+                            "hover": false,
+                            "options": {
+                                "h1": "H1",
+                                "h2": "H2",
+                                "h3": "H3",
+                                "h4": "H4",
+                                "h5": "H5",
+                                "h6": "H6"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

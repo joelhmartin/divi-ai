@@ -1,0 +1,99 @@
+{
+    "module_type": "et_pb_slider",
+    "label": "Slider",
+    "category": "media",
+    "has_children": true,
+    "child_type": "et_pb_slide",
+    "description": "A slider module that displays multiple slides with transition effects, supporting images, text, and call-to-action buttons.",
+    "natural_language_aliases": ["slider", "slideshow", "carousel"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "elements": {
+                    "label": "Elements",
+                    "fields": {
+                        "show_arrows": {
+                            "type": "yes_no",
+                            "label": "Show Arrows",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "show_pagination": {
+                            "type": "yes_no",
+                            "label": "Show Pagination",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "auto_play": {
+                    "label": "Automatic Animation",
+                    "fields": {
+                        "auto": {
+                            "type": "yes_no",
+                            "label": "Automatic Animation",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "auto_speed": {
+                            "type": "text",
+                            "label": "Automatic Animation Speed (in ms)",
+                            "default": "7000",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "navigation": {
+                    "label": "Navigation",
+                    "fields": {
+                        "arrows_custom_color": {
+                            "type": "color",
+                            "label": "Arrow Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "dot_nav_custom_color": {
+                            "type": "color",
+                            "label": "Dot Navigation Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

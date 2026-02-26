@@ -1,0 +1,84 @@
+{
+    "module_type": "et_pb_code",
+    "label": "Code",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A code module for embedding custom HTML, CSS, JavaScript, or other raw code directly into the page.",
+    "natural_language_aliases": ["code", "custom code", "html", "raw code", "embed"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Code",
+                    "fields": {
+                        "raw_content": {
+                            "type": "textarea",
+                            "label": "Code",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "sizing": {
+                    "label": "Sizing",
+                    "fields": {
+                        "max_width": {
+                            "type": "text",
+                            "label": "Max Width",
+                            "default": "",
+                            "responsive": true,
+                            "hover": false
+                        }
+                    }
+                },
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right",
+                                "justified": "Justified"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

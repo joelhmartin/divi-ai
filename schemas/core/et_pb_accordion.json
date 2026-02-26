@@ -1,0 +1,72 @@
+{
+    "module_type": "et_pb_accordion",
+    "label": "Accordion",
+    "category": "layout",
+    "has_children": true,
+    "child_type": "et_pb_accordion_item",
+    "description": "A collapsible content container with multiple toggleable sections, where only one section is open at a time.",
+    "natural_language_aliases": ["accordion", "collapsible", "toggle list", "expandable sections", "FAQ"],
+    "tabs": {
+        "general": {
+            "toggles": {}
+        },
+        "design": {
+            "toggles": {
+                "toggle": {
+                    "label": "Toggle",
+                    "fields": {
+                        "open_toggle_background_color": {
+                            "type": "color",
+                            "label": "Open Toggle Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        },
+                        "closed_toggle_background_color": {
+                            "type": "color",
+                            "label": "Closed Toggle Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                },
+                "icon": {
+                    "label": "Icon",
+                    "fields": {
+                        "toggle_icon": {
+                            "type": "text",
+                            "label": "Toggle Icon",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "module_type": "et_pb_image",
+    "label": "Image",
+    "category": "media",
+    "has_children": false,
+    "child_type": null,
+    "description": "An image module for displaying a single image with optional link, alignment, and full-width controls.",
+    "natural_language_aliases": ["image", "picture", "photo", "img"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Image",
+                    "fields": {
+                        "src": {
+                            "type": "upload",
+                            "label": "Image URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "alt": {
+                            "type": "text",
+                            "label": "Alt Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "link": {
+                    "label": "Link",
+                    "fields": {
+                        "url": {
+                            "type": "text",
+                            "label": "Link URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url_new_window": {
+                            "type": "yes_no",
+                            "label": "URL Opens in New Window",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "alignment": {
+                    "label": "Alignment",
+                    "fields": {
+                        "align": {
+                            "type": "select",
+                            "label": "Image Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        },
+                        "force_fullwidth": {
+                            "type": "yes_no",
+                            "label": "Force Fullwidth",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

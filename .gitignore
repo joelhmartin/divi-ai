@@ -1,0 +1,32 @@
+# Dependencies
+vendor/
+node_modules/
+
+# Build output
+assets/js/dist/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# WordPress
+wp-config.php
+
+# PHPUnit
+.phpunit.result.cache
+
+# Composer lock (optional)
+composer.lock
+
+# npm lock
+package-lock.json

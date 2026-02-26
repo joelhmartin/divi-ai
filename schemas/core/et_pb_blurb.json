@@ -1,0 +1,124 @@
+{
+    "module_type": "et_pb_blurb",
+    "label": "Blurb",
+    "category": "text",
+    "has_children": false,
+    "child_type": null,
+    "description": "A content block combining an icon or image with a title and text body, commonly used for feature highlights and services.",
+    "natural_language_aliases": ["blurb", "feature box", "icon box", "info box", "icon with text"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Text",
+                    "fields": {
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url_new_window": {
+                            "type": "yes_no",
+                            "label": "Url Opens In New Window",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "content": {
+                            "type": "tiny_mce",
+                            "label": "Body",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "image": {
+                    "label": "Image & Icon",
+                    "fields": {
+                        "use_icon": {
+                            "type": "yes_no",
+                            "label": "Use Icon",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "font_icon": {
+                            "type": "text",
+                            "label": "Icon",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "image": {
+                            "type": "upload",
+                            "label": "Image",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "icon_settings": {
+                    "label": "Icon",
+                    "fields": {
+                        "icon_color": {
+                            "type": "color",
+                            "label": "Icon Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                },
+                "text": {
+                    "label": "Text",
+                    "fields": {
+                        "text_orientation": {
+                            "type": "select",
+                            "label": "Text Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right",
+                                "justified": "Justified"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "module_type": "et_pb_tabs",
+    "label": "Tabs",
+    "category": "layout",
+    "has_children": true,
+    "child_type": "et_pb_tab",
+    "description": "A tabbed content container that organizes multiple content sections into switchable tabs.",
+    "natural_language_aliases": ["tabs", "tabbed content", "tab container", "tab group"],
+    "tabs": {
+        "general": {
+            "toggles": {}
+        },
+        "design": {
+            "toggles": {
+                "tab_colors": {
+                    "label": "Tab",
+                    "fields": {
+                        "active_tab_background_color": {
+                            "type": "color",
+                            "label": "Active Tab Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        },
+                        "inactive_tab_background_color": {
+                            "type": "color",
+                            "label": "Inactive Tab Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

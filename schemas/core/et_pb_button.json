@@ -1,0 +1,116 @@
+{
+    "module_type": "et_pb_button",
+    "label": "Button",
+    "category": "action",
+    "has_children": false,
+    "child_type": null,
+    "description": "A customizable call-to-action button with configurable text, link, and styling options.",
+    "natural_language_aliases": ["button", "CTA", "call to action", "link button"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Text",
+                    "fields": {
+                        "button_text": {
+                            "type": "text",
+                            "label": "Button Text",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                },
+                "link": {
+                    "label": "Link",
+                    "fields": {
+                        "button_url": {
+                            "type": "text",
+                            "label": "Button Link URL",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "url_new_window": {
+                            "type": "yes_no",
+                            "label": "Url Opens In New Window",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "alignment": {
+                    "label": "Alignment",
+                    "fields": {
+                        "button_alignment": {
+                            "type": "select",
+                            "label": "Button Alignment",
+                            "default": "left",
+                            "responsive": true,
+                            "hover": false,
+                            "options": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            }
+                        }
+                    }
+                },
+                "button": {
+                    "label": "Button",
+                    "fields": {
+                        "custom_button": {
+                            "type": "yes_no",
+                            "label": "Use Custom Styles For Button",
+                            "default": "off",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "button_text_color": {
+                            "type": "color",
+                            "label": "Button Text Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        },
+                        "button_bg_color": {
+                            "type": "color",
+                            "label": "Button Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": true
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

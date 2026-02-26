@@ -1,0 +1,52 @@
+/**
+ * Divi Anchor AI — Admin Settings Styles
+ */
+
+.divi-anchor-settings {
+    max-width: 800px;
+}
+
+.divi-anchor-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+}
+
+.divi-anchor-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.divi-anchor-key-field {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.divi-anchor-key-field input {
+    flex: 1;
+    max-width: 400px;
+}
+
+.divi-anchor-sysinfo {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.divi-anchor-sysinfo td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.divi-anchor-sysinfo tr:last-child td {
+    border-bottom: none;
+}
+
+.divi-anchor-sysinfo td:first-child {
+    font-weight: 600;
+    width: 200px;
+    color: #1d2327;
+}

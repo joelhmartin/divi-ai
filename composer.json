@@ -1,0 +1,23 @@
+{
+    "name": "joelhmartin/divi-anchor-ai",
+    "description": "AI-powered editing assistant for the Divi Visual Builder",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=7.4",
+        "yahnis-elsts/plugin-update-checker": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "classmap": [
+            "includes/"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "yahnis-elsts/plugin-update-checker": true
+        }
+    }
+}

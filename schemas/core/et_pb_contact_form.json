@@ -1,0 +1,94 @@
+{
+    "module_type": "et_pb_contact_form",
+    "label": "Contact Form",
+    "category": "forms",
+    "has_children": true,
+    "child_type": "et_pb_contact_field",
+    "description": "A contact form module with customizable fields, email notifications, and optional captcha protection.",
+    "natural_language_aliases": ["contact form", "form", "contact"],
+    "tabs": {
+        "general": {
+            "toggles": {
+                "main_content": {
+                    "label": "Content",
+                    "fields": {
+                        "email": {
+                            "type": "text",
+                            "label": "Email Address",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "title": {
+                            "type": "text",
+                            "label": "Title",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "success_message": {
+                            "type": "text",
+                            "label": "Success Message",
+                            "default": "Thanks for contacting us",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "captcha": {
+                            "type": "yes_no",
+                            "label": "Use Captcha",
+                            "default": "on",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "design": {
+            "toggles": {
+                "fields": {
+                    "label": "Fields",
+                    "fields": {
+                        "form_field_background_color": {
+                            "type": "color",
+                            "label": "Form Field Background Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "form_field_text_color": {
+                            "type": "color",
+                            "label": "Form Field Text Color",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        },
+        "advanced": {
+            "toggles": {
+                "css": {
+                    "label": "Custom CSS",
+                    "fields": {
+                        "module_class": {
+                            "type": "text",
+                            "label": "CSS Class",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        },
+                        "module_id": {
+                            "type": "text",
+                            "label": "CSS ID",
+                            "default": "",
+                            "responsive": false,
+                            "hover": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
