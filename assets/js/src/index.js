@@ -2,8 +2,9 @@
  * Divi Anchor AI — Entry Point.
  *
  * Initializes the appropriate builder engine (Divi 4 or 5),
- * creates the adapter instance, and boots the chat panel with
- * local intent classification, guidance mode, and AI-powered changes.
+ * creates the adapter instance, and injects an AI tab into the
+ * Divi settings modal with local intent classification, guidance
+ * mode, and AI-powered changes.
  *
  * @package Divi_Anchor_AI
  */
@@ -15,9 +16,12 @@ import { Divi5Engine } from './adapter/Divi5Engine';
 // Phase 2: Guidance Mode.
 import { IntentClassifier } from './intent/IntentClassifier';
 import { ChangesetBuilder } from './intent/ChangesetBuilder';
-import { ChatPanel } from './chat/ChatPanel';
 import { ChangesetPreview } from './chat/ChangesetPreview';
 import { VisualFeedback } from './feedback/VisualFeedback';
+
+// Tab injection.
+import { ModalTabInjector } from './tab/ModalTabInjector';
+import { AITabContent } from './tab/AITabContent';
 
 // Shared helpers.
 import {
@@ -40,6 +44,18 @@ import {
     }
 
     /**
+     * Detect whether we're running inside the Divi builder frame.
+     * The VB iframe has #et-fb-app or window.ET_Builder; the parent BFB frame does not.
+     *
+     * @returns {boolean}
+     */
+    function isBuilderFrame() {
+        if (document.getElementById('et-fb-app')) return true;
+        if (typeof window.ET_Builder !== 'undefined') return true;
+        return false;
+    }
+
+    /**
      * Select the appropriate engine based on detected Divi version.
      *
      * @returns {Object} Engine instance.
@@ -52,9 +68,15 @@ import {
     }
 
     /**
-     * Boot the adapter and guidance mode.
+     * Boot the adapter and AI tab injection.
      */
     async function init() {
+        // Guard: only run in the builder frame, not the parent BFB frame.
+        if (!isBuilderFrame()) {
+            console.log('[Divi Anchor AI] Not the builder frame — skipping init.');
+            return;
+        }
+
         const engine = createEngine();
         engine.init();
 
@@ -67,16 +89,16 @@ import {
             `[Divi Anchor AI] Adapter initialized (Divi ${config.diviVersion || 'unknown'}, plugin v${config.pluginVersion})`
         );
 
-        // Initialize Guidance + AI Mode.
-        await initGuidanceMode(adapter);
+        // Initialize AI Tab Mode.
+        await initAITab(adapter);
     }
 
     /**
-     * Initialize the Guidance Mode system.
+     * Initialize the AI Tab injection system.
      *
      * @param {DiviBuilderAdapter} adapter - The adapter instance.
      */
-    async function initGuidanceMode(adapter) {
+    async function initAITab(adapter) {
         const classifier = new IntentClassifier();
         const changesetBuilder = new ChangesetBuilder();
         const changesetPreview = new ChangesetPreview();
@@ -86,22 +108,53 @@ import {
         const schemaIndex = await buildSchemaIndex(adapter);
         classifier.buildIndex(schemaIndex);
 
-        // Create chat panel.
-        const chatPanel = new ChatPanel({
-            onSend: (text) => handleUserMessage(text, adapter, classifier, changesetBuilder, changesetPreview, visualFeedback, chatPanel),
+        // Shared AITabContent instance — created on first modal open.
+        let aiTab = null;
+
+        // Create the tab injector.
+        const tabInjector = new ModalTabInjector({
+            onModalOpen(container, moduleInfo) {
+                // Create or re-render AITabContent.
+                aiTab = new AITabContent({
+                    onSend: (text) => handleUserMessage(text, adapter, classifier, changesetBuilder, changesetPreview, visualFeedback, aiTab),
+                });
+                aiTab.render(container);
+
+                // Set module context if available.
+                if (moduleInfo) {
+                    aiTab.setModuleContext(moduleInfo);
+                }
+            },
+
+            onModalClose() {
+                // Nothing to persist yet — tab content is destroyed with the modal.
+                aiTab = null;
+            },
+
+            onModuleChange(moduleInfo) {
+                if (aiTab) {
+                    aiTab.clear();
+                    aiTab.setModuleContext(moduleInfo);
+                    aiTab.addMessage(
+                        'Module changed. Tell me what you\'d like to change on this module.',
+                        'assistant'
+                    );
+                }
+            },
         });
-        chatPanel.mount();
+
+        tabInjector.init();
 
         // Expose for debugging.
         window.diviAnchorGuidance = {
             classifier,
             changesetBuilder,
             visualFeedback,
-            chatPanel,
+            tabInjector,
             schemaIndex,
         };
 
-        console.log('[Divi Anchor AI] Guidance Mode ready');
+        console.log('[Divi Anchor AI] AI Tab Mode ready');
     }
 
     /**
@@ -145,13 +198,9 @@ import {
      * @param {string}      text  - New text content.
      */
     function replaceMessageContent(msgEl, text) {
-        // Preserve any appended child elements (previews, buttons) by
-        // updating only the first text node or creating one.
         const formatted = formatMarkdown(text);
-        // Find or create a content span.
         let contentSpan = msgEl.querySelector('.da-msg-content');
         if (!contentSpan) {
-            // Wrap existing innerHTML in a span for first-time setup.
             contentSpan = document.createElement('span');
             contentSpan.className = 'da-msg-content';
             contentSpan.innerHTML = msgEl.innerHTML;
@@ -178,23 +227,23 @@ import {
     /**
      * Handle guidance-only flow (Phase 2 behavior — navigate to field).
      *
-     * @param {Object}           intent           - Classified intent.
-     * @param {Object}           selected         - Selected module info.
+     * @param {Object}           intent
+     * @param {Object}           selected
      * @param {ChangesetBuilder} changesetBuilder
      * @param {ChangesetPreview} changesetPreview
      * @param {VisualFeedback}   visualFeedback
-     * @param {ChatPanel}        chatPanel
+     * @param {AITabContent}     chatUI
      */
-    async function handleGuidanceFlow(intent, selected, changesetBuilder, changesetPreview, visualFeedback, chatPanel) {
+    async function handleGuidanceFlow(intent, selected, changesetBuilder, changesetPreview, visualFeedback, chatUI) {
         const plan = changesetBuilder.buildGuidancePlan(intent);
 
         if (!plan.success) {
-            chatPanel.addMessage(plan.message, 'error');
+            chatUI.addMessage(plan.message, 'error');
             return;
         }
 
         // Show guidance message in chat.
-        chatPanel.addMessage(plan.message, 'guidance');
+        chatUI.addMessage(plan.message, 'guidance');
 
         // If the intent includes a value and the action is 'change', show a changeset preview.
         if (intent.action === 'change' && intent.value && intent.fields.length > 0) {
@@ -208,7 +257,7 @@ import {
                     new_value: intent.value,
                 },
             ]);
-            const messages = chatPanel.el.querySelectorAll('.da-message');
+            const messages = chatUI.el.querySelectorAll('.da-message');
             if (messages.length > 0) {
                 messages[messages.length - 1].appendChild(preview);
             }
@@ -225,13 +274,13 @@ import {
     /**
      * Handle a simple local change (no AI needed — instant apply).
      *
-     * @param {Object}           intent           - Classified intent.
-     * @param {Object}           selected         - { moduleId, moduleType, moduleData }.
+     * @param {Object}             intent
+     * @param {Object}             selected - { moduleId, moduleType, moduleData }.
      * @param {DiviBuilderAdapter} adapter
-     * @param {ChangesetPreview} changesetPreview
-     * @param {ChatPanel}        chatPanel
+     * @param {ChangesetPreview}   changesetPreview
+     * @param {AITabContent}       chatUI
      */
-    async function handleLocalChange(intent, selected, adapter, changesetPreview, chatPanel) {
+    async function handleLocalChange(intent, selected, adapter, changesetPreview, chatUI) {
         const field = intent.fields[0];
         const value = resolveLocalValue(intent);
         const oldValue = (selected.moduleData || {})[field.fieldName] || field.default || '';
@@ -247,7 +296,7 @@ import {
         const applied = adapter.applyChanges(selected.moduleId, { [field.fieldName]: value });
 
         if (!applied) {
-            chatPanel.addMessage('Failed to apply changes. The module may have been deselected.', 'error');
+            chatUI.addMessage('Failed to apply changes. The module may have been deselected.', 'error');
             return;
         }
 
@@ -260,7 +309,7 @@ import {
         }];
 
         // Show success message with preview.
-        const msgEl = chatPanel.addMessage(
+        const msgEl = chatUI.addMessage(
             `Done! Updated **${field.label}** to \`${value}\`.`,
             'guidance'
         );
@@ -269,7 +318,7 @@ import {
         msgEl.appendChild(preview);
 
         // Append undo button.
-        chatPanel.appendUndoButton(msgEl, async () => {
+        chatUI.appendUndoButton(msgEl, async () => {
             try {
                 const result = await adapter.rollback({ module_id: selected.moduleId });
                 if (result && result.data) {
@@ -285,16 +334,16 @@ import {
     /**
      * Handle an AI-powered change (two-stage pipeline with confirm/apply/undo).
      *
-     * @param {string}             text             - User's original message.
-     * @param {Object}             intent           - Classified intent.
-     * @param {Object}             selected         - { moduleId, moduleType, moduleData }.
+     * @param {string}             text
+     * @param {Object}             intent
+     * @param {Object}             selected - { moduleId, moduleType, moduleData }.
      * @param {DiviBuilderAdapter} adapter
      * @param {ChangesetPreview}   changesetPreview
-     * @param {ChatPanel}          chatPanel
+     * @param {AITabContent}       chatUI
      */
-    async function handleAIChange(text, intent, selected, adapter, changesetPreview, chatPanel) {
+    async function handleAIChange(text, intent, selected, adapter, changesetPreview, chatUI) {
         // Show status message (will be updated in-place).
-        const statusEl = chatPanel.addMessage('Analyzing your request...', 'assistant');
+        const statusEl = chatUI.addMessage('Analyzing your request...', 'assistant');
 
         // Save snapshot (best-effort).
         try {
@@ -373,17 +422,17 @@ import {
                 removeActionButtons(preview);
 
                 if (!applied) {
-                    const errEl = chatPanel.addMessage(
+                    chatUI.addMessage(
                         'Failed to apply changes. The module may have been deselected.',
                         'error'
                     );
                     return;
                 }
 
-                const doneEl = chatPanel.addMessage('Changes applied successfully!', 'guidance');
+                const doneEl = chatUI.addMessage('Changes applied successfully!', 'guidance');
 
                 // Append undo button.
-                chatPanel.appendUndoButton(doneEl, async () => {
+                chatUI.appendUndoButton(doneEl, async () => {
                     try {
                         const result = await adapter.rollback({ module_id: selected.moduleId });
                         if (result && result.data) {
@@ -397,7 +446,7 @@ import {
             },
             onCancel: () => {
                 removeActionButtons(preview);
-                chatPanel.addMessage('Changes cancelled.', 'assistant');
+                chatUI.addMessage('Changes cancelled.', 'assistant');
             },
         });
         statusEl.appendChild(preview);
@@ -406,28 +455,28 @@ import {
     /* ─── Main Message Dispatcher ─── */
 
     /**
-     * Handle a user message from the chat panel.
+     * Handle a user message from the AI tab.
      *
      * Routes to one of three handlers:
      *  1. Guidance flow (find action or fallback)
      *  2. Local fast-path (simple, high-confidence single-field change)
      *  3. AI pipeline (complex changes requiring AI generation)
      *
-     * @param {string}             text             - User's message text.
+     * @param {string}             text
      * @param {DiviBuilderAdapter} adapter
      * @param {IntentClassifier}   classifier
      * @param {ChangesetBuilder}   changesetBuilder
      * @param {ChangesetPreview}   changesetPreview
      * @param {VisualFeedback}     visualFeedback
-     * @param {ChatPanel}          chatPanel
+     * @param {AITabContent}       chatUI
      */
-    async function handleUserMessage(text, adapter, classifier, changesetBuilder, changesetPreview, visualFeedback, chatPanel) {
+    async function handleUserMessage(text, adapter, classifier, changesetBuilder, changesetPreview, visualFeedback, chatUI) {
         // Get the currently selected module.
         const selected = adapter.getSelectedModule();
         const moduleType = selected ? selected.moduleType : null;
 
         if (!moduleType) {
-            chatPanel.addMessage(
+            chatUI.addMessage(
                 'Please select a module in the Divi Builder first, then tell me what you\'d like to change.',
                 'error'
             );
@@ -435,7 +484,7 @@ import {
         }
 
         // Show typing indicator.
-        chatPanel.showTyping();
+        chatUI.showTyping();
 
         // Clean up previous feedback.
         visualFeedback.cleanup();
@@ -444,18 +493,18 @@ import {
         const intent = classifier.classify(text, moduleType);
 
         // Remove typing indicator.
-        chatPanel.removeTyping();
+        chatUI.removeTyping();
 
         // Route to the appropriate handler.
         if (intent.action === 'find') {
-            await handleGuidanceFlow(intent, selected, changesetBuilder, changesetPreview, visualFeedback, chatPanel);
+            await handleGuidanceFlow(intent, selected, changesetBuilder, changesetPreview, visualFeedback, chatUI);
         } else if (isSimpleLocalChange(intent)) {
-            await handleLocalChange(intent, selected, adapter, changesetPreview, chatPanel);
+            await handleLocalChange(intent, selected, adapter, changesetPreview, chatUI);
         } else if (needsAI(intent)) {
-            await handleAIChange(text, intent, selected, adapter, changesetPreview, chatPanel);
+            await handleAIChange(text, intent, selected, adapter, changesetPreview, chatUI);
         } else {
             // Fallback to guidance.
-            await handleGuidanceFlow(intent, selected, changesetBuilder, changesetPreview, visualFeedback, chatPanel);
+            await handleGuidanceFlow(intent, selected, changesetBuilder, changesetPreview, visualFeedback, chatUI);
         }
     }
 

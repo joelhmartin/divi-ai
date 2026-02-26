@@ -263,7 +263,7 @@ export class VisualFeedback {
      * @returns {number}
      */
     tabNameToIndex(name) {
-        const map = { general: 0, design: 1, advanced: 2 };
+        const map = { general: 0, design: 1, advanced: 2, ai: 3 };
         return map[name] != null ? map[name] : 0;
     }
 

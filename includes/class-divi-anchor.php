@@ -122,10 +122,10 @@ class Divi_Anchor {
             'pluginVersion' => DIVI_ANCHOR_VERSION,
         ) );
 
-        // Guidance Mode styles.
+        // AI Tab styles.
         wp_enqueue_style(
-            'divi-anchor-chat-panel',
-            DIVI_ANCHOR_URL . 'assets/css/chat-panel.css',
+            'divi-anchor-ai-tab',
+            DIVI_ANCHOR_URL . 'assets/css/ai-tab.css',
             array(),
             DIVI_ANCHOR_VERSION
         );

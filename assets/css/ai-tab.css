@@ -1,0 +1,324 @@
+/*
+ * Divi Anchor AI — AI Tab Styles.
+ *
+ * Styles for the AI chat tab injected into Divi's module settings modal.
+ *
+ * @package Divi_Anchor_AI
+ */
+
+/* ─── AI Tab Content Container ─── */
+.da-ai-tab-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 300px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* ─── Tab Header ─── */
+.da-tab-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e2e4e7;
+    flex-shrink: 0;
+}
+
+.da-tab-module-info {
+    font-size: 12px;
+    font-weight: 500;
+    color: #50575e;
+}
+
+/* ─── Message List ─── */
+.da-tab-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 120px;
+}
+
+.da-tab-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.da-tab-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.da-tab-messages::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+/* ─── Messages ─── */
+.da-message {
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 88%;
+    word-wrap: break-word;
+    animation: da-fadeIn 0.2s ease;
+}
+
+.da-message-user {
+    align-self: flex-end;
+    background: #6c2eb9;
+    color: #fff;
+    border-bottom-right-radius: 3px;
+}
+
+.da-message-assistant {
+    align-self: flex-start;
+    background: #f0f0f4;
+    color: #1d2327;
+    border-bottom-left-radius: 3px;
+}
+
+.da-message-error {
+    align-self: flex-start;
+    background: #fef0f0;
+    color: #cc1818;
+    border-left: 3px solid #cc1818;
+    border-radius: 3px;
+}
+
+.da-message-guidance {
+    align-self: flex-start;
+    background: #f0f5ff;
+    color: #1a3a6b;
+    border-left: 3px solid #3b82f6;
+    border-radius: 3px;
+}
+
+/* ─── Typing Indicator ─── */
+.da-typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 8px 12px;
+    align-self: flex-start;
+}
+
+.da-typing-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #999;
+    animation: da-bounce 1.2s infinite;
+}
+
+.da-typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.da-typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* ─── Input Area ─── */
+.da-tab-input-area {
+    display: flex;
+    gap: 8px;
+    padding: 10px 14px;
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.da-tab-input {
+    flex: 1;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    resize: none;
+    min-height: 36px;
+    max-height: 80px;
+    line-height: 1.4;
+    transition: border-color 0.15s;
+}
+
+.da-tab-input:focus {
+    border-color: #6c2eb9;
+    box-shadow: 0 0 0 2px rgba(108, 46, 185, 0.15);
+}
+
+.da-tab-input::placeholder {
+    color: #999;
+}
+
+.da-tab-send-btn {
+    background: #6c2eb9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0 14px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+
+.da-tab-send-btn:hover {
+    background: #5a24a0;
+}
+
+.da-tab-send-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ─── Changeset Preview ─── */
+.da-changeset-preview {
+    background: #f8f9fa;
+    border: 1px solid #e2e4e7;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.da-changeset-preview-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1d2327;
+}
+
+.da-changeset-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 3px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.da-changeset-item:last-child {
+    border-bottom: none;
+}
+
+.da-changeset-field {
+    font-weight: 500;
+    color: #50575e;
+    min-width: 80px;
+}
+
+.da-changeset-old {
+    text-decoration: line-through;
+    color: #cc1818;
+    opacity: 0.7;
+}
+
+.da-changeset-arrow {
+    color: #999;
+}
+
+.da-changeset-new {
+    color: #00a32a;
+    font-weight: 500;
+}
+
+/* ─── Changeset Action Buttons ─── */
+.da-changeset-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.da-changeset-btn {
+    flex: 1;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.da-changeset-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.da-changeset-btn-apply {
+    background: #00a32a;
+    color: #fff;
+    border: none;
+}
+
+.da-changeset-btn-apply:hover:not(:disabled) {
+    background: #008a20;
+}
+
+.da-changeset-btn-cancel {
+    background: #f0f0f4;
+    color: #1d2327;
+    border: 1px solid #dcdde1;
+}
+
+.da-changeset-btn-cancel:hover:not(:disabled) {
+    background: #e2e4e7;
+}
+
+/* ─── Undo Button ─── */
+.da-undo-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #6c2eb9;
+    background: transparent;
+    border: 1px solid #6c2eb9;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.da-undo-btn:hover:not(:disabled) {
+    background: #6c2eb9;
+    color: #fff;
+}
+
+.da-undo-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ─── Animations ─── */
+@keyframes da-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes da-bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-4px);
+    }
+}
+
+/* ─── AI Tab Button Highlight ─── */
+.et-fb-tabs__item[data-da-tab="ai"] {
+    position: relative;
+}
+
+.et-fb-tabs__item[data-da-tab="ai"].et-fb-tabs__item--active {
+    color: #6c2eb9;
+}
