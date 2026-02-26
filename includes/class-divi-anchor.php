@@ -144,6 +144,17 @@ class Divi_Anchor {
      * @return bool
      */
     private function is_visual_builder() {
+        // Divi 5 VB detection.
+        if ( function_exists( 'et_builder_is_visual_builder' ) && et_builder_is_visual_builder() ) {
+            return true;
+        }
+
+        // Divi 5 fallback: BFB query parameter.
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        if ( isset( $_GET['et_bfb'] ) && $_GET['et_bfb'] === '1' ) {
+            return true;
+        }
+
         // Divi 4 VB detection.
         if ( function_exists( 'et_core_is_fb_enabled' ) && et_core_is_fb_enabled() ) {
             return true;
