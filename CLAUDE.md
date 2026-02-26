@@ -7,6 +7,8 @@ AI-powered editing assistant for the Divi Visual Builder. WordPress plugin by Jo
 ```bash
 npm run build          # Webpack production build → assets/js/dist/divi-anchor-adapter.js
 npm run dev            # Webpack dev watch mode
+npm test               # Jest — 153 JS tests (intent, helpers, chat, adapter)
+npm run test:watch     # Jest watch mode
 vendor/bin/phpunit     # 25 PHP tests (schema registry, changeset validation, REST API)
 ```
 
@@ -38,7 +40,10 @@ Single webpack entry point (`index.js`) bundles everything to `assets/js/dist/di
 **Adapter layer** (`adapter/`):
 - `DiviBuilderAdapter.js` — REST client + delegates to engine
 - `Divi4Engine.js` — Backbone model access, MutationObserver for selection tracking
-- `Divi5Engine.js` — Stub (not yet implemented)
+- `Divi5Engine.js` — `@divi/data` store integration: select/dispatch for module attrs, subscribe for selection tracking, DOM fallback
+
+**Shared helpers** (`helpers.js`):
+- Extracted from `index.js` — `isSimpleLocalChange`, `resolveLocalValue`, `needsAI`, `changesetToMap`, `formatMarkdown`, `formatAIError`, `COMPLEX_FIELD_TYPES`
 
 **Guidance Mode** (`chat/`, `feedback/`, `intent/`):
 - `IntentClassifier.js` — Local NLP: tokenize → abbreviation expansion → score fields against schema (no API calls)
@@ -52,7 +57,7 @@ Single webpack entry point (`index.js`) bundles everything to `assets/js/dist/di
 
 ### Schema Files (`schemas/core/`)
 
-10 module schemas: `et_pb_text`, `et_pb_button`, `et_pb_image`, `et_pb_blurb`, `et_pb_code`, `et_pb_accordion`, `et_pb_tabs`, `et_pb_slider`, `et_pb_contact_form`, `et_pb_signup`.
+50 module schemas covering all major Divi modules: text, media, layout, forms, action, and fullwidth variants.
 
 Structure: `{ module_type, label, category, natural_language_aliases, tabs: { general/design/advanced: { toggles: { fields } } } }`.
 
@@ -63,12 +68,12 @@ Field types: `text`, `tiny_mce`, `textarea`, `upload`, `yes_no`, `select`, `colo
 - PHP: WordPress coding standards. Prefixed classes (`Divi_Anchor_*`), no namespaces.
 - JS: ES6 modules, classes, `async/await`. No framework — vanilla JS DOM manipulation.
 - CSS: BEM-ish with `da-` prefix for all Guidance Mode classes. Z-index: 999900 (panel), 999990 (tooltips).
-- All VB assets gated behind `is_visual_builder()` check (Divi 4 `et_core_is_fb_enabled()` or `?et_fb=1`).
+- All VB assets gated behind `is_visual_builder()` check (Divi 5 `et_builder_is_visual_builder()` / `?et_bfb=1`, Divi 4 `et_core_is_fb_enabled()` / `?et_fb=1`).
 - WP config object: `window.diviAnchorConfig` via `wp_localize_script` (restUrl, nonce, diviVersion, pluginVersion).
 
 ## What's Not Done Yet
 
-- **AI apply mode**: The AI proxy and changeset engine (Phase 1) are built but not yet wired into the chat flow. Guidance Mode (Phase 2) only navigates to fields — it doesn't apply changes.
-- **Divi 5 engine**: `Divi5Engine.js` is a stub. Needs React store integration when Divi 5 API stabilizes.
-- **JS tests**: No JS test framework yet. Only PHP tests exist.
-- **More schemas**: Divi has 40+ modules; only 10 are covered.
+- **Divi 5 real-world testing**: The Divi 5 engine is implemented against the documented `@divi/data` API but has not been tested against a live Divi 5 install. Selector names (`getEditingModuleId`, etc.) may need adjustment once the Divi 5 API stabilizes.
+- **End-to-end tests**: JS tests cover units (153 tests); no integration/E2E tests exercising the full chat → classify → apply flow in a browser.
+- **Remaining schemas**: 50 of ~70+ total Divi modules are covered. Missing: individual slide/tab items, specialty sections, some WooCommerce modules, and third-party module schemas.
+- **AI apply wiring in Divi 5**: The AI pipeline (Phase 3) works with the Divi 4 engine; the Divi 5 engine supports `applyChanges()` but the full AI flow has not been verified end-to-end in Divi 5.
