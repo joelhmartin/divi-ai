@@ -121,6 +121,21 @@ class Divi_Anchor {
             'diviVersion'  => $this->version_adapter->get_version(),
             'pluginVersion' => DIVI_ANCHOR_VERSION,
         ) );
+
+        // Guidance Mode styles.
+        wp_enqueue_style(
+            'divi-anchor-chat-panel',
+            DIVI_ANCHOR_URL . 'assets/css/chat-panel.css',
+            array(),
+            DIVI_ANCHOR_VERSION
+        );
+
+        wp_enqueue_style(
+            'divi-anchor-visual-feedback',
+            DIVI_ANCHOR_URL . 'assets/css/visual-feedback.css',
+            array(),
+            DIVI_ANCHOR_VERSION
+        );
     }
 
     /**

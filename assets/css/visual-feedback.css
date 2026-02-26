@@ -1,0 +1,228 @@
+/**
+ * Divi Anchor AI — Visual Feedback Styles.
+ *
+ * Field highlight pulse, module flash, tooltip/overlay styling
+ * for the guidance system in the Divi Visual Builder.
+ *
+ * @package Divi_Anchor_AI
+ */
+
+/* ─── Field Highlight ─── */
+.da-field-highlight {
+    outline: 2px solid #6c2eb9 !important;
+    outline-offset: 2px;
+    border-radius: 4px;
+    animation: da-pulse 1.5s ease-in-out 3;
+    position: relative;
+    z-index: 1;
+}
+
+.da-field-highlight-glow {
+    box-shadow: 0 0 0 4px rgba(108, 46, 185, 0.2) !important;
+}
+
+@keyframes da-pulse {
+    0% {
+        outline-color: #6c2eb9;
+        box-shadow: 0 0 0 0 rgba(108, 46, 185, 0.4);
+    }
+    50% {
+        outline-color: #9b59b6;
+        box-shadow: 0 0 0 8px rgba(108, 46, 185, 0);
+    }
+    100% {
+        outline-color: #6c2eb9;
+        box-shadow: 0 0 0 0 rgba(108, 46, 185, 0);
+    }
+}
+
+/* ─── Module Flash ─── */
+.da-module-flash {
+    animation: da-moduleFlash 0.6s ease 2;
+}
+
+@keyframes da-moduleFlash {
+    0% {
+        outline: 3px solid transparent;
+        outline-offset: 2px;
+    }
+    50% {
+        outline: 3px solid #6c2eb9;
+        outline-offset: 2px;
+    }
+    100% {
+        outline: 3px solid transparent;
+        outline-offset: 2px;
+    }
+}
+
+/* ─── Active Tab Indicator ─── */
+.da-active-tab-indicator {
+    position: relative;
+}
+
+.da-active-tab-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #6c2eb9;
+    border-radius: 3px 3px 0 0;
+    animation: da-fadeInUp 0.3s ease;
+}
+
+@keyframes da-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Toggle Highlight ─── */
+.da-toggle-highlight {
+    background: rgba(108, 46, 185, 0.06) !important;
+    border-left: 3px solid #6c2eb9 !important;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ─── Guidance Overlay / Tooltip ─── */
+.da-guidance-overlay {
+    position: fixed;
+    z-index: 999990;
+    pointer-events: none;
+}
+
+.da-guidance-tooltip {
+    position: absolute;
+    background: #1d2327;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.5;
+    max-width: 260px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    animation: da-tooltipIn 0.25s ease;
+    pointer-events: auto;
+}
+
+.da-guidance-tooltip-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.da-guidance-tooltip-body {
+    opacity: 0.9;
+}
+
+/* ─── Tooltip Arrow ─── */
+.da-guidance-tooltip::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #1d2327;
+    transform: rotate(45deg);
+}
+
+.da-guidance-tooltip.da-tooltip-top::before {
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.da-guidance-tooltip.da-tooltip-bottom::before {
+    top: -5px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+.da-guidance-tooltip.da-tooltip-left::before {
+    right: -5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.da-guidance-tooltip.da-tooltip-right::before {
+    left: -5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+@keyframes da-tooltipIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Guidance Dismiss Button ─── */
+.da-guidance-dismiss {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    background: none;
+    border: none;
+    color: #fff;
+    opacity: 0.6;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    padding: 2px;
+    pointer-events: auto;
+}
+
+.da-guidance-dismiss:hover {
+    opacity: 1;
+}
+
+/* ─── Step Progress Bar ─── */
+.da-guidance-progress {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.da-guidance-progress-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.da-guidance-progress-dot.da-active {
+    background: #fff;
+}
+
+.da-guidance-progress-dot.da-done {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Scrim / Backdrop ─── */
+.da-guidance-scrim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.08);
+    z-index: 999980;
+    pointer-events: none;
+    animation: da-fadeIn 0.3s ease;
+}
+
+@keyframes da-fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
