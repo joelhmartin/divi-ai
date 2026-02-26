@@ -63,6 +63,48 @@ export class ChangesetPreview {
     }
 
     /**
+     * Render a changeset preview with Apply / Cancel action buttons.
+     *
+     * @param {Array}    changes            - Array of { field, label, old_value, new_value }.
+     * @param {Object}   callbacks          - { onApply: Function, onCancel: Function }.
+     * @param {Function} callbacks.onApply  - Called when Apply is clicked.
+     * @param {Function} callbacks.onCancel - Called when Cancel is clicked.
+     * @returns {HTMLElement}
+     */
+    renderWithActions(changes, { onApply, onCancel }) {
+        const wrapper = this.render(changes);
+
+        const actions = document.createElement('div');
+        actions.className = 'da-changeset-actions';
+
+        const applyBtn = document.createElement('button');
+        applyBtn.className = 'da-changeset-btn da-changeset-btn-apply';
+        applyBtn.textContent = 'Apply';
+
+        const cancelBtn = document.createElement('button');
+        cancelBtn.className = 'da-changeset-btn da-changeset-btn-cancel';
+        cancelBtn.textContent = 'Cancel';
+
+        applyBtn.addEventListener('click', () => {
+            applyBtn.disabled = true;
+            cancelBtn.disabled = true;
+            onApply();
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            applyBtn.disabled = true;
+            cancelBtn.disabled = true;
+            onCancel();
+        });
+
+        actions.appendChild(applyBtn);
+        actions.appendChild(cancelBtn);
+        wrapper.appendChild(actions);
+
+        return wrapper;
+    }
+
+    /**
      * Format a value for display.
      *
      * @param {string} value - Field value.

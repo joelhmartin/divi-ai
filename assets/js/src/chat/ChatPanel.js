@@ -145,6 +145,33 @@ export class ChatPanel {
     }
 
     /**
+     * Append an undo button to a message element.
+     *
+     * @param {HTMLElement} msgEl  - The message element to append to.
+     * @param {Function}    onUndo - Async callback when undo is clicked.
+     */
+    appendUndoButton(msgEl, onUndo) {
+        const btn = document.createElement('button');
+        btn.className = 'da-undo-btn';
+        btn.textContent = 'Undo';
+
+        btn.addEventListener('click', async () => {
+            btn.disabled = true;
+            btn.textContent = 'Undoing...';
+            try {
+                await onUndo();
+                btn.textContent = 'Undone';
+            } catch (e) {
+                btn.textContent = 'Undo failed';
+                btn.disabled = false;
+            }
+        });
+
+        msgEl.appendChild(btn);
+        this.messageList.scrollToBottom();
+    }
+
+    /**
      * Show the typing indicator.
      */
     showTyping() {

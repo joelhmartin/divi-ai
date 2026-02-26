@@ -308,3 +308,72 @@
         transform: translateY(-4px);
     }
 }
+
+/* ─── Changeset Action Buttons (Apply / Cancel) ─── */
+.da-changeset-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.da-changeset-btn {
+    flex: 1;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.da-changeset-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.da-changeset-btn-apply {
+    background: #00a32a;
+    color: #fff;
+    border: none;
+}
+
+.da-changeset-btn-apply:hover:not(:disabled) {
+    background: #008a20;
+}
+
+.da-changeset-btn-cancel {
+    background: #f0f0f4;
+    color: #1d2327;
+    border: 1px solid #dcdde1;
+}
+
+.da-changeset-btn-cancel:hover:not(:disabled) {
+    background: #e2e4e7;
+}
+
+/* ─── Undo Button ─── */
+.da-undo-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #6c2eb9;
+    background: transparent;
+    border: 1px solid #6c2eb9;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.da-undo-btn:hover:not(:disabled) {
+    background: #6c2eb9;
+    color: #fff;
+}
+
+.da-undo-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
