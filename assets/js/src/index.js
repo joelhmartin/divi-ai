@@ -39,6 +39,12 @@ import {
         return;
     }
 
+    // Prevent double-initialization (script may load in both parent and VB iframe).
+    if (window.__diviAnchorInitialized) {
+        return;
+    }
+    window.__diviAnchorInitialized = true;
+
     /**
      * Select the appropriate engine based on detected Divi version.
      *
