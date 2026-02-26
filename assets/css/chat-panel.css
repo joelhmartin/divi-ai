@@ -377,3 +377,33 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* ─── Persistent Toggle Button ─── */
+.da-chat-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #6c2eb9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 999900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(108, 46, 185, 0.4);
+    transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.da-chat-toggle:hover {
+    background: #5a24a0;
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(108, 46, 185, 0.5);
+}
+
+.da-chat-toggle.da-hidden {
+    display: none;
+}

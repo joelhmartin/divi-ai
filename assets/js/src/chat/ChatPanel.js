@@ -14,6 +14,7 @@ export class ChatPanel {
     constructor(options = {}) {
         this.onSend = options.onSend || (() => {});
         this.el = null;
+        this.toggleBtn = null;
         this.messageList = null;
         this.inputEl = null;
         this.collapsed = false;
@@ -28,6 +29,12 @@ export class ChatPanel {
      * @returns {HTMLElement} The panel element.
      */
     mount() {
+        // Prevent duplicate panels if script runs twice in the same document.
+        const existing = document.querySelector('.da-chat-panel');
+        if (existing) {
+            existing.remove();
+        }
+
         this.el = document.createElement('div');
         this.el.className = 'da-chat-panel';
         this.el.innerHTML = this.template();
@@ -48,6 +55,9 @@ export class ChatPanel {
 
         // Restore saved position.
         this.restorePosition();
+
+        // Create the persistent toggle button.
+        this.mountToggleButton();
 
         // Welcome message.
         this.messageList.addMessage(
@@ -197,17 +207,45 @@ export class ChatPanel {
     }
 
     /**
-     * Show the panel.
+     * Create and mount the persistent toggle button.
      */
-    show() {
-        this.el.classList.remove('da-hidden');
+    mountToggleButton() {
+        // Remove any existing toggle button.
+        const existing = document.querySelector('.da-chat-toggle');
+        if (existing) {
+            existing.remove();
+        }
+
+        this.toggleBtn = document.createElement('button');
+        this.toggleBtn.className = 'da-chat-toggle da-hidden';
+        this.toggleBtn.title = 'Open Divi Anchor AI';
+        this.toggleBtn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`;
+
+        this.toggleBtn.addEventListener('click', () => {
+            this.show();
+        });
+
+        document.body.appendChild(this.toggleBtn);
     }
 
     /**
-     * Hide the panel.
+     * Show the panel, hide the toggle button.
+     */
+    show() {
+        this.el.classList.remove('da-hidden');
+        if (this.toggleBtn) {
+            this.toggleBtn.classList.add('da-hidden');
+        }
+    }
+
+    /**
+     * Hide the panel, show the toggle button.
      */
     hide() {
         this.el.classList.add('da-hidden');
+        if (this.toggleBtn) {
+            this.toggleBtn.classList.remove('da-hidden');
+        }
     }
 
     /**
@@ -298,11 +336,14 @@ export class ChatPanel {
     }
 
     /**
-     * Unmount the panel from the DOM.
+     * Unmount the panel and toggle button from the DOM.
      */
     destroy() {
         if (this.el && this.el.parentNode) {
             this.el.parentNode.removeChild(this.el);
+        }
+        if (this.toggleBtn && this.toggleBtn.parentNode) {
+            this.toggleBtn.parentNode.removeChild(this.toggleBtn);
         }
     }
 }

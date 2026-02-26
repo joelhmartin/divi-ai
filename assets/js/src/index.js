@@ -77,11 +77,6 @@ import {
      * @param {DiviBuilderAdapter} adapter - The adapter instance.
      */
     async function initGuidanceMode(adapter) {
-        // Prevent duplicate panels (script may run in both parent and VB iframe).
-        if (document.querySelector('.da-chat-panel')) {
-            return;
-        }
-
         const classifier = new IntentClassifier();
         const changesetBuilder = new ChangesetBuilder();
         const changesetPreview = new ChangesetPreview();

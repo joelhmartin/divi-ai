@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants.
-define( 'DIVI_ANCHOR_VERSION', '1.0.0' );
+define( 'DIVI_ANCHOR_VERSION', '1.0.2' );
 define( 'DIVI_ANCHOR_FILE', __FILE__ );
 define( 'DIVI_ANCHOR_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DIVI_ANCHOR_URL', plugin_dir_url( __FILE__ ) );
