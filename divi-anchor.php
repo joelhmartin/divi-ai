@@ -3,7 +3,7 @@
  * Plugin Name: Divi Anchor AI
  * Plugin URI:  https://github.com/joelhmartin/divi-ai
  * Description: AI-powered editing assistant for the Divi Visual Builder.
- * Version:     1.0.1
+ * Version:     1.0.2
  * Author:      Joel Martin
  * Author URI:  https://github.com/joelhmartin
  * License:     GPL-2.0-or-later
